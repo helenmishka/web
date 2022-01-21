@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Регистрация
+{% endblock %}
+
+<link href="static/css/signin.css" rel="stylesheet">
+
+{% block body %}
+
+<body class="text-center" cz-shortcut-listen="true">
+    <form class="container align-self-center form-signin" action = "/registration" method = "post">
+        <h1 class="h3 mb-3 font-weight-normal">Выберите тип пользователя</h1>
+        <input name="role" type="radio" value="1"> Заказчик
+        <input name="role" type="radio" value="2"> Оператор
+        <input name="role" type="radio" value="3" checked> Администратор
+    <div class="checkbox mb-3">
+    </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Далее</button>
+</form>
+
+        {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-danger" role="alert" width = '50'>
+          {{message}}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+    <div class="parent">
+<a href="{{ url_for('admin_space') }}">Вернуться в личный кабинет</a>
+    </div>
+
+</body>
+
+<!-- <a href="{{ url_for('main') }}">Main page</a> -->
+
+
+{% endblock %}
+
+
+

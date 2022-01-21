@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Личный кабинет администратора
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Личный кабинет администратора</h1>
+    <a href="{{ url_for('registration') }}">Зарегистрировать нового пользователя</a>
+    <br>
+    <a href="{{ url_for('del_contract_admin') }}">Удалить договор</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="{{ url_for('log_out') }}">Выйти из личного кабинета</a>
+</div>
+{% endblock %}

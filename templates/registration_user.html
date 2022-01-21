@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Регистрация заказчика
+{% endblock %}
+
+<link href="static/css/signin.css" rel="stylesheet">
+
+
+
+{% block body %}
+
+
+
+
+<body class="text-center" cz-shortcut-listen="true">
+    <form class="container align-self-center form-signin" action = "/registration_user" method = "post">
+        <h1 class="h3 mb-3 font-weight-normal">Заполните анкету</h1>
+        <div align="left">  ФИО заказчика</div>
+        <label for="name_customer" class="sr-only">ФИО</label>
+        <input type="text" id="name_customer" name="name_customer" class="container  form-control" placeholder="ФИО" required="" autofocus="">
+        <br>
+        <div align="left"> Дата рождения</div>
+        <label for="birthday" class="sr-only">Дата Рождения</label>
+        <input type="date" id="birthday" name="birthday" class="container  form-control" placeholder="Дата рождения" required="" autofocus="">
+        <br>
+        <div align="left">  Паспортные данные</div>
+        <label for="passport" class="sr-only">Паспорт</label>
+        <input type="text" id="passport" name="passport" class="container  form-control" placeholder="Номер паспорта" required="" autofocus="">
+        <br>
+        <div align="left">  Эл. почта</div>
+        <label for="reg_login" class="sr-only">Эл. почта</label>
+        <input type="email" id="reg_login" name="reg_login" class="container  form-control" placeholder="Email address" required="" autofocus="">
+        <br>
+        <div align="left"> Пароль</div>
+        <label class="sr-only">Пароль</label>
+        <input type="password" id="inputPassword1" name="reg_password1" class="container form-control" placeholder="Password" required="">
+        <br>
+        <div align="left">  Введите пароль еще раз</div>
+        <label for="inputPassword1" class="sr-only">Введите пароль еще раз</label>
+        <input type="password" id="inputPassword2" name="reg_password2" class="container form-control" placeholder="Password" required="">
+        <br>
+        {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-danger" role="alert" width = '50'>
+          {{message}}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрировать</button>
+</form>
+
+
+    <div class="parent">
+<a href="{{ url_for('admin_space') }}">Вернуться в личный кабинет</a>
+    </div>
+
+</body>
+
+<!-- <a href="{{ url_for('main') }}">Main page</a> -->
+
+
+{% endblock %}
+
+
+

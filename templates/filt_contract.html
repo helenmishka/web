@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Отфильтровать
+{% endblock %}
+
+{% block style %}
+   body {
+    margin: 0; /* Убираем отступы */
+   }
+   .parent {
+    margin: 0.5%; /* Отступы вокруг элемента */
+    padding: 10px; /* Поля вокруг текста */
+   }
+   .child {
+    border: 3px solid #666; /* Параметры рамки */
+    padding: 10px; /* Поля вокруг текста */
+    margin: 10px; /* Отступы вокруг */
+   }
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="parent">
+<a href="{{ url_for('user_space') }}">Вернуться в личный кабинет</a>
+    </div>
+     </div>
+<form novalidate class="container align-self-center form-signin" action = "/filt_contract" method = "post">
+        <h1 class="h3 mb-3 font-weight-normal">Выберите фильтр</h1>
+        <input name="check_1" type="checkbox" value="1"> Дата
+        <input type = "date" name="Date" id="Date" class="form-control" placeholder="Дата" required=""><br>
+        <input name="check_2" type="checkbox" value="1"> Тип
+        <input type = "text" name="Type" id="Type" class="form-control" placeholder="Тип" required=""><br>
+        <input name="check_3" type="checkbox" value="1"> Период
+        <input type = "text" name="Period" id="Period" class="form-control" placeholder="Период" required=""><br>
+        <input name="check_4" type="checkbox" value="1"> Статус
+        <input type = "text" name="Status" id="Status" class="form-control" placeholder="Статус" required=""><br>
+    <div class="checkbox mb-3">
+    </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Далее</button>
+</form>
+
+{% endblock %}

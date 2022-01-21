@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Обновить статус всех договоров в определенном временном интервале
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="parent">
+<a href="{{ url_for('operator_space') }}">Вернуться в личный кабинет</a>
+    </div>
+    <h1>Обновить статус всех договоров в определенном временном интервале</h1>
+    <form method="post">
+        <input type = "date" name="DateContractStart" id="DateContractStart" class="form-control" placeholder="От" required=""><br>
+        <input type = "date" name="DateContractEnd" id="DateContractEnd" class="form-control" placeholder="До" required=""><br>
+        <div class="form-group">
+            <label for="StatusContract">Выберите статус договора</label>
+             <select class="form-control" id="StatusContract" name = "StatusContract">
+          <option selected value="Действителен">Действителен</option>
+          <option value="Не действителен">Не действителен</option>
+        </select><br>
+                {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-danger" role="alert" width = '50'>
+          {{message}}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+        <input type="submit" class="btn btn-success" value="Изменить">
+    </form>
+</div>
+{% endblock %}
+

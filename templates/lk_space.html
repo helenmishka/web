@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Личный кабинет пользователя
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Личный кабинет</h1>
+    <a href="{{ url_for('sign_up') }}">Войти в личный кабинет</a>
+    <br>
+</div>
+{% endblock %}

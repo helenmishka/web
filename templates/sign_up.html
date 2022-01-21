@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Личный кабинет
+{% endblock %}
+
+<link href="static/css/signin.css" rel="stylesheet">
+
+
+{% block body %}
+        {% with messages = get_flashed_messages() %}
+  {% if messages %}
+
+    {% for message in messages %}
+      <div class="alert alert-info" role="alert">
+          {{message}}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body class="text-center" cz-shortcut-listen="true">
+    <form class="container align-self-center form-signin" action = "/sign_up" method = "post">
+        <h1 class="h3 mb-3 font-weight-normal">Введите логин и пароль</h1>
+        <label for="inputEmail" class="sr-only">Эл. почта</label>
+        <input type="email" id="inputEmail" name="login" class="container  form-control" placeholder="Логин" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Пароль</label>
+        <input type="password" id="inputPassword" name="password" class="container form-control" placeholder="Пароль" required="">
+    </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+</form>
+
+</body>
+
+
+
+
+{% endblock %}
+
+
+

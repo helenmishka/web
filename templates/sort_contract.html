@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Сортировка
+{% endblock %}
+
+{% block style %}
+   body {
+    margin: 0; /* Убираем отступы */
+   }
+   .parent {
+    margin: 0.5%; /* Отступы вокруг элемента */
+    padding: 10px; /* Поля вокруг текста */
+   }
+   .child {
+    border: 3px solid #666; /* Параметры рамки */
+    padding: 10px; /* Поля вокруг текста */
+    margin: 10px; /* Отступы вокруг */
+   }
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="parent">
+<a href="{{ url_for('user_space') }}">Вернуться в личный кабинет</a>
+    </div>
+     </div>
+<form class="container align-self-center form-signin" action = "/sort_contract" method = "post">
+        <h1 class="h3 mb-3 font-weight-normal">Выберите вид сортировки</h1>
+        <input name="check" type="radio" value="1"> По дате
+        <input name="check" type="radio" value="2"> По типу
+        <input name="check" type="radio" value="3"> По периоду
+        <input name="check" type="radio" value="4" checked> По статусу
+    <div class="checkbox mb-3">
+    </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Далее</button>
+</form>
+
+{% endblock %}

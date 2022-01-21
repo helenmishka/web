@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Регистрация администратора
+{% endblock %}
+
+<link href="static/css/signin.css" rel="stylesheet">
+
+
+
+{% block body %}
+
+
+<body class="text-center" cz-shortcut-listen="true">
+    <form class="container align-self-center form-signin" action = "/registration_admin" method = "post">
+        <h1 class="h3 mb-3 font-weight-normal">Введите имя пользователя и пароль</h1>
+        <label for="reg_login" class="sr-only">Эл. почта</label>
+        <input type="email" id="reg_login" name="reg_login" class="container  form-control" placeholder="Email address" required="" autofocus="">
+        <label class="sr-only">Пароль</label>
+        <input type="password" id="inputPassword1" name="reg_password1" class="container form-control" placeholder="Password" required="">
+        <label for="inputPassword1" class="sr-only">Введите пароль еще раз</label>
+        <input type="password" id="inputPassword2" name="reg_password2" class="container form-control" placeholder="Password" required="">
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрировать</button>
+</form>
+
+        {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-danger" role="alert" width = '50'>
+          {{message}}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+    <div class="parent">
+<a href="{{ url_for('admin_space') }}">Вернуться в личный кабинет</a>
+    </div>
+
+</body>
+
+<!-- <a href="{{ url_for('main') }}">Main page</a> -->
+
+
+{% endblock %}
+
+
+

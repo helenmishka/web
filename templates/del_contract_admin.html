@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Удалить договор
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="parent">
+<a href="{{ url_for('admin_space') }}">Вернуться в личный кабинет</a>
+    </div>
+    <h1>Удалить договор</h1>
+    <form method="post">
+        <input type = "text" name="NumberContract" id="NumberContract" class="form-control" placeholder="Номер договора" required=""><br>
+        <br>
+                        {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-danger" role="alert" width = '50'>
+          {{message}}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+        <input type="submit" class="btn btn-success" value="Удалить">
+    </form>
+</div>
+
+{% endblock %}

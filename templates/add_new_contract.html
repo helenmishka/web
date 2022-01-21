@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавить договор
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="parent">
+<a href="{{ url_for('operator_space') }}">Вернуться в личный кабинет</a>
+    </div>
+    <h1>Добавить договор</h1>
+    <form method="post">
+        <div align="left">Логин заказчика<div>
+        <input type="text" name="login_customer" id="login_customer" class="form-control" placeholder="Логин заказчика" required=""><br>
+            <div align="left">Номер договора<div>
+        <input type = "text" name="NumberContract" id="NumberContract" class="form-control" placeholder="Номер договора" required=""><br>
+                <div align="left">Дата заключения<div>
+        <input type = "date" name="DateContract" id="DateContract" class="form-control" placeholder="Дата заключения договора" required=""><br>
+        <div class="form-group">
+    <label for="TypeContract">Выберите тип договора</label>
+    <select class="form-control" id="TypeContract" name = "TypeContract">
+      <option selected value="Двусторонний">Двусторонний</option>
+        <option value="Трехсторонний">Трехсторонний</option>
+    </select><br>
+            <div align="left">Период действия<div>
+        <input type = "text" name="PeriodContract" id="PeriodContract" class="form-control" placeholder="Период" required=""><br>
+        <div class="form-group">
+            <label for="StatusContract">Выберите статус договора</label>
+             <select class="form-control" id="StatusContract" name = "StatusContract">
+          <option selected value="Действителен">Действителен</option>
+          <option value="Не действителен">Не действителен</option>
+        </select><br>
+            <div align="left">Стоимость<div>
+        <input type = "text" name="ValueContract" id="ValueContract" class="form-control" placeholder="Стоимость" required=""><br>
+                <div align="left">Код направления<div>
+         <input type = "text" name="IdDirection" id="IdDirection" class="form-control" placeholder="Код направления" required=""><br>
+            <br>
+        {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-danger" role="alert" width = '50'>
+          {{message}}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+        <input type="submit" class="btn btn-success" value="Добавить">
+    </form>
+</div>
+{% endblock %}
+

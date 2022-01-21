@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Поиск договора
+{% endblock %}
+
+{% block style %}
+   body {
+    margin: 0; /* Убираем отступы */
+   }
+   .parent {
+    margin: 0.5%; /* Отступы вокруг элемента */
+    padding: 10px; /* Поля вокруг текста */
+   }
+   .child {
+    border: 3px solid #666; /* Параметры рамки */
+    padding: 10px; /* Поля вокруг текста */
+    margin: 10px; /* Отступы вокруг */
+   }
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="parent">
+<a href="{{ url_for('operator_space') }}">Вернуться в личный кабинет</a>
+    </div>
+
+    <h1>Поиск договора</h1>
+    <form method="post">
+        <input type="text" name="search_contract" id="search_contract" class="form-control" placeholder="Введите номер договора" required=""><br>
+        <input type="submit" class="btn btn-success" value="Найти">
+    </form>
+
+    <table class="table">
+      <thead class="thead">
+        <tr>
+          <th>Номер договора</th>
+            <th>ФИО заказчика</th>
+          <th>Дата заключения</th>
+          <th>Тип</th>
+            <th>Период</th>
+            <th>Статус договора</th>
+            <th>Код направления</th>
+            <th>Номер счета</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for c, cr in con %}
+        <tr>
+          <td>{{c.numbercontract}}</td>
+            <td>{{cr.namecustomer}}</td>
+          <td>{{c.datecontract}}</td>
+          <td>{{c.typecontract}}</td>
+            <td>{{c.periodcontract}}</td>
+            <td>{{c.statuscontract}}</td>
+            <td>{{c.iddirection}}</td>
+            <td>{{pay}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Личный кабинет оператора
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Личный кабинет оператора</h1>
+    <a href="{{ url_for('add_new_contract') }}">Добавить новый договор</a>
+    <br>
+    <a href="{{ url_for('add_new_pay') }}">Добавить новый счет</a>
+    <br>
+    <a href="{{ url_for('del_contract') }}">Удалить договор</a>
+    <br>
+    <a href="{{ url_for('search_contract') }}">Просмотреть договор</a>
+    <br>
+    <a href="{{ url_for('new_status') }}">Обновить статус всех договоров в определенном временном интервале</a>
+    <br>
+    <br>
+    <br>
+    <a href="{{ url_for('log_out') }}">Выйти из личного кабинета</a>
+</div>
+{% endblock %}

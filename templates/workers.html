@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Сотрудники
+{% endblock %}
+
+{% block style %}
+   body {
+    margin: 0; /* Убираем отступы */
+   }
+   .parent {
+    margin: 0.5%; /* Отступы вокруг элемента */
+    padding: 10px; /* Поля вокруг текста */
+   }
+   .child {
+    border: 3px solid #666; /* Параметры рамки */
+    padding: 10px; /* Поля вокруг текста */
+    margin: 10px; /* Отступы вокруг */
+   }
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+<div class="parent">
+    <h2>Сотрудники</h2>
+</div>
+<table class="table">
+      <thead class="thead">
+        <tr>
+          <th>ФИО</th>
+          <th>Должность</th>
+          <th>Номер телефона</th>
+        </tr>
+      </thead>
+    <tbody>
+        {% for w in worker %}
+        <tr>
+          <td>{{w.nameworker}}</td>
+          <td>{{w.postworker}}</td>
+          <td>{{w.phonenumber}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+
+</div>
+
+{% endblock %}

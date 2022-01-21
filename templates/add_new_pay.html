@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавить счет
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="parent">
+<a href="{{ url_for('operator_space') }}">Вернуться в личный кабинет</a>
+    </div>
+    <h1>Добавить счет</h1>
+    <form method="post">
+        <div align="left">Номер счета<div>
+        <input type = "text" name="AccountNumber" id="AccountNumber" class="form-control" placeholder="Номер счета" required=""><br>
+        <div class="form-group">
+    <label for="PaymentMethod">Выберите способ оплаты</label>
+    <select class="form-control" id="PaymentMethod" name = "PaymentMethod">
+      <option selected value="Собственные средства">Собственные средства</option>
+        <option value="Материнский капитал">Материнский капитал</option>
+        <option value="Кредит">Кредит</option>
+        <option value="Юр. лицо">Юр. лицо</option>
+    </select><br>
+            <div align="left">Дата оплаты<div>
+        <input type = "date" name="PaymentDate" id="PaymentDate" class="form-control" placeholder="Дата оплаты" required=""><br>
+                <div align="left">Номер договора<div>
+        <input type = "text" name="NumberContract" id="NumberContract" class="form-control" placeholder="Номер договора" required=""><br>
+        <br>
+        {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-danger" role="alert" width = '50'>
+          {{message}}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+        <input type="submit" class="btn btn-success" value="Добавить">
+    </form>
+</div>
+{% endblock %}
+
