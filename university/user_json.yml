@@ -24,7 +24,7 @@
                   type: string
                   description: users password
                 sign_role:
-                  type: int
+                  type: integer
                   description: users role
 
 

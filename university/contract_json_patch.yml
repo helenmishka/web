@@ -1,0 +1,29 @@
+        tags:
+          - Flast Restful APIs
+        parameters:
+          - name: DateContractStart
+            in: query
+            type: string
+            format: date
+            required: true
+            description: start
+          - name: DateContractEnd
+            in: query
+            type: string
+            format: date
+            required: true
+            description: end
+          - name: status
+            in: query
+            type: string
+            required: true
+            description: status
+        responses:
+          200:
+            description:
+            schema:
+              id: new_status
+              properties:
+                statuscontract:
+                  type: string
+                  description: contract status

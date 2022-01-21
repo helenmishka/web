@@ -1,0 +1,33 @@
+        tags:
+          - Flast Restful APIs
+        parameters:
+          - name: numbercontract
+            in: query
+            type: integer
+            required: true
+            description: contract number
+          - name: statuscontract
+            in: query
+            type: string
+            required: true
+            description: contract status
+          - name: customerpassport
+            in: query
+            type: integer
+            required: true
+            description: customer passport
+        responses:
+          200:
+            description:
+            schema:
+              id: contracts
+              properties:
+                numbercontract:
+                  type: integer
+                  description: contract number
+                statuscontract:
+                  type: string
+                  description: contract status
+                customerpassport:
+                  type: integer
+                  description: customer passport

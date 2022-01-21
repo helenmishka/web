@@ -1,0 +1,19 @@
+        tags:
+          - Flast Restful APIs
+        responses:
+          200:
+            description:
+            schema:
+              id: contracts
+              properties:
+                numbercontract:
+                  type: integer
+                  description: number contract
+                statuscontract:
+                  type: string
+                  description: status contract
+                customerpassport:
+                  type: integer
+                  description: customer passport
+
+
