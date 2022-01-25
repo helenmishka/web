@@ -1,0 +1,21 @@
+        tags:
+          - Flast Restful APIs
+        responses:
+          200:
+            description:
+            schema:
+              id: pay
+              properties:
+                pay_accountnumber:
+                  type: integer
+                  description: account number
+                pay_paymentmethod:
+                  type: string
+                  description: payment method
+                pay_paymentdate:
+                  type: string
+                  format: date
+                  description: payment date
+                pay_numbercontract:
+                  type: integer
+                  description: number of contract
