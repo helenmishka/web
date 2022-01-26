@@ -12,7 +12,6 @@ from flask_sqlalchemy import SQLAlchemy
 from university import app, api, db
 from university.models import User, Contracts, Workers, Customers, Pay, Directions
 
-
 class Users:
     def __init__(self, login, password):
         self.login = login

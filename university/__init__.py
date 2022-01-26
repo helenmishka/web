@@ -6,6 +6,7 @@ from flask_restx import Api, Resource, fields
 from flasgger import Swagger
 import config
 
+
 app = Flask(__name__)
 app.secret_key = 'i love bmstu'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:159357@localhost:5432/university_web'
@@ -35,7 +36,7 @@ template = {
     },
     "security": [
         {
-            "Bearer": []
+            "Bearer": ["123"]
         }
     ]
 
