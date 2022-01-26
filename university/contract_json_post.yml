@@ -1,21 +1,53 @@
         tags:
           - Flast Restful APIs
         parameters:
-          - name: numbercontract
+          - name: login_user
+            in: query
+            type: string
+            required: true
+            description: login user
+          - name: login_customer
+            in: query
+            type: string
+            required: true
+            description: login customer
+          - name: number_contract
             in: query
             type: integer
             required: true
             description: contract number
+          - name: date_contract
+            in: query
+            type: string
+            format: date
+            required: true
+            description: date contract
+          - name: type_contract
+            in: query
+            type: string
+            required: true
+            description: type contract
+          - name: period_contract
+            in: query
+            type: string
+            required: true
+            description: period contract
           - name: statuscontract
             in: query
             type: string
             required: true
             description: contract status
-          - name: customerpassport
+          - name: value_contract
             in: query
             type: integer
             required: true
-            description: customer passport
+            description: value contract
+          - name: id_direction
+            in: query
+            type: string
+            required: true
+            description: id direction
+
         responses:
           200:
             description:
@@ -31,3 +63,11 @@
                 customerpassport:
                   type: integer
                   description: customer passport
+          default:
+            description: Unexpected error
+            schema:
+              id: error
+              properties:
+                error:
+                  type: string
+                  description: ошибка

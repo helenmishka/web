@@ -26,5 +26,12 @@
                 sign_role:
                   type: integer
                   description: users role
-
+          default:
+            description: Unexpected error
+            schema:
+              id: error
+              properties:
+                error:
+                  type: string
+                  description: ошибка
 

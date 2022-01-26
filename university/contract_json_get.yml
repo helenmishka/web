@@ -15,5 +15,13 @@
                 customerpassport:
                   type: integer
                   description: customer passport
+          default:
+            description: Unexpected error
+            schema:
+              id: error
+              properties:
+                error:
+                  type: string
+                  description: ошибка
 
 

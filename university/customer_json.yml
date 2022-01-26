@@ -1,0 +1,51 @@
+        tags:
+          - Flast Restful APIs
+        parameters:
+          - name: namecustomer
+            in: query
+            type: string
+            required: true
+            description: name customer
+          - name: birthdaycustomer
+            in: query
+            type: string
+            format: date
+            required: true
+            description: birthday customer
+          - name: passportdetails
+            in: query
+            type: integer
+            required: true
+            description: passport details
+          - name: login
+            in: query
+            type: string
+            required: true
+            description: login
+        responses:
+          200:
+            description:
+            schema:
+              id: customer
+              properties:
+                namecustomer:
+                  type: string
+                  description: name customer
+                birthdaycustomer:
+                  type: string
+                  format: date
+                  description: birthday customer
+                passportdetails:
+                  type: integer
+                  description: passport details
+                login:
+                  type: string
+                  description: login
+          default:
+            description: Unexpected error
+            schema:
+              id: error
+              properties:
+                error:
+                  type: string
+                  description: ошибка

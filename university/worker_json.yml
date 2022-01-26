@@ -1,0 +1,57 @@
+        tags:
+          - Flast Restful APIs
+        parameters:
+          - name: id_worker
+            in: query
+            type: integer
+            required: true
+            description: id worker
+          - name: name_worker
+            in: query
+            type: string
+            required: true
+            description: name worker
+          - name: post_worker
+            in: query
+            type: string
+            required: true
+            description: post worker
+          - name: phone_number
+            in: query
+            type: string
+            required: true
+            description: phone number
+          - name: login
+            in: query
+            type: string
+            required: true
+            description: login
+        responses:
+          200:
+            description:
+            schema:
+              id: worker
+              properties:
+                id_worker:
+                    type: integer
+                    description: id worker
+                name_worker:
+                    type: string
+                    description: name worker
+                post_worker:
+                    type: string
+                    description: post worker
+                phone_number:
+                    type: string
+                    description: phone number
+                login:
+                    type: string
+                    description: login
+          default:
+            description: Unexpected error
+            schema:
+              id: error
+              properties:
+                error:
+                  type: string
+                  description: ошибка

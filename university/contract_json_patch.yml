@@ -27,3 +27,11 @@
                 statuscontract:
                   type: string
                   description: contract status
+          default:
+            description: Unexpected error
+            schema:
+              id: error
+              properties:
+                error:
+                  type: string
+                  description: ошибка
