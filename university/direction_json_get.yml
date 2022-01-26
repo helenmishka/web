@@ -1,0 +1,28 @@
+        tags:
+          - Flast Restful APIs
+        responses:
+          200:
+            description:
+            schema:
+              id: direction
+              properties:
+                typedirection:
+                  type: string
+                  description: type direction
+                iddirection:
+                  type: string
+                  description: id direction
+                namedirection:
+                  type: string
+                  description: name direction
+                idexecutor:
+                  type: string
+                  description: id executor
+          default:
+            description: Unexpected error
+            schema:
+              id: error
+              properties:
+                error:
+                  type: string
+                  description: ошибка

@@ -5,21 +5,37 @@
             in: query
             type: string
             required: true
-            description: users login
+            description: user login
           - name: password
             in: query
             type: string
             required: true
-            description: users password
+            description: user password
+          - name: password2
+            in: query
+            type: string
+            required: true
+            description: user password
+          - name: role
+            in: query
+            type: integer
+            required: true
+            description: user role
         responses:
           200:
             description:
             schema:
-              id: sign_in
+              id: user
               properties:
-                space:
+                login:
                   type: string
-                  description: space
+                  description: login
+                password:
+                  type: string
+                  description: password
+                role:
+                  type: integer
+                  description: role
           default:
             description: Unexpected error
             schema:

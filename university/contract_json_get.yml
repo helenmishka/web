@@ -6,15 +6,34 @@
             schema:
               id: contracts
               properties:
-                numbercontract:
+                login_user:
+                  type: string
+                  description: login user
+                login_customer:
+                  type: string
+                  description: login customer
+                number_contract:
                   type: integer
-                  description: number contract
+                  description: contract number
+                date_contract:
+                  type: string
+                  format: date
+                  description: date contract
+                type_contract:
+                  type: string
+                  description: type contract
+                period_contract:
+                  type: string
+                  description: period contract
                 statuscontract:
                   type: string
-                  description: status contract
-                customerpassport:
+                  description: contract status
+                value_contract:
                   type: integer
-                  description: customer passport
+                  description: value contract
+                id_direction:
+                  type: string
+                  description: id direction
           default:
             description: Unexpected error
             schema:

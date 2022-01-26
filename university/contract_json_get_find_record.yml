@@ -1,23 +1,11 @@
         tags:
           - Flast Restful APIs
         parameters:
-          - name: DateContractStart
+          - name: number_contract
             in: query
-            type: string
-            format: date
+            type: integer
             required: true
-            description: start
-          - name: DateContractEnd
-            in: query
-            type: string
-            format: date
-            required: true
-            description: end
-          - name: status
-            in: query
-            type: string
-            required: true
-            description: status
+            description: contract number
         responses:
           200:
             description:
@@ -60,3 +48,5 @@
                 error:
                   type: string
                   description: ошибка
+
+

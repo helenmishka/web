@@ -32,7 +32,7 @@
             type: string
             required: true
             description: period contract
-          - name: statuscontract
+          - name: status_contract
             in: query
             type: string
             required: true
@@ -54,15 +54,34 @@
             schema:
               id: contracts
               properties:
-                numbercontract:
+                login_user:
+                  type: string
+                  description: login user
+                login_customer:
+                  type: string
+                  description: login customer
+                number_contract:
                   type: integer
                   description: contract number
+                date_contract:
+                  type: string
+                  format: date
+                  description: date contract
+                type_contract:
+                  type: string
+                  description: type contract
+                period_contract:
+                  type: string
+                  description: period contract
                 statuscontract:
                   type: string
                   description: contract status
-                customerpassport:
+                value_contract:
                   type: integer
-                  description: customer passport
+                  description: value contract
+                id_direction:
+                  type: string
+                  description: id direction
           default:
             description: Unexpected error
             schema:
